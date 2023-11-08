@@ -2,7 +2,8 @@
 
 from flask import Flask, render_template, request
 
-app = Flask(__name__)   
+app = Flask(__name__)  
+app._static_folder = 'static'
 
 
 @app.route('/')
@@ -20,4 +21,4 @@ def contacto():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0',debug=True)
+    app.run(host='0.0.0.0',debug=True)
