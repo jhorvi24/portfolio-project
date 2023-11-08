@@ -10,6 +10,10 @@ app._static_folder = 'static'
 def index():
     return render_template('index.html')
 
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html')
+
 @app.route('/proyectos')
 def proyectos():
     return render_template('proyectos.html')

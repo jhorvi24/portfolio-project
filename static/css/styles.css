@@ -6695,6 +6695,10 @@ textarea.form-control-lg {
   background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-profile{
+  text-align: justify;
+}
+
 .link-primary {
   color: #1abc9c !important;
 }
@@ -10862,6 +10866,7 @@ html {
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
 }
+
 .divider-custom .divider-custom-line:last-child {
   margin-left: 1rem;
 }
