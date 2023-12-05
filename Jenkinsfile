@@ -5,12 +5,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'docker build -t flask-app .'
-        sh 'docker tag my-flask-app $DOCKER_BFLASK_IMAGE'
+        sh 'docker tag flask-app $DOCKER_PORTFOLIO_APP'
       }
     }
     stage('Test') {
       steps {
-        sh 'docker run flask-app python -m pytest app/tests/'
+        sh 'docker run flask-app python -m pytest ./tests/'
       }
     }
     stage('Deploy') {
