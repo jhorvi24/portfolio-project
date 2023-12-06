@@ -1,26 +1,36 @@
 #Portafolio que sirve para mostrar los proyecto realizados por un desarrollador software
 
 from flask import Flask, render_template, request
+import socket
 
 app = Flask(__name__)  
 app._static_folder = 'static'
 
+def get_ip():    
+    hostname = socket.gethostname()
+    ip = socket.gethostbyname(hostname)
+    return hostname, ip
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    hostname, ip = get_ip()    
+    return render_template('index.html', HOSTNAME=hostname, IP=ip)  
+    
 
 @app.route('/perfil')
 def perfil():
+    hostname, ip = get_ip()    
     return render_template('perfil.html')
 
 @app.route('/proyectos')
 def proyectos():
+    hostname, ip = get_ip()    
     return render_template('proyectos.html')
 
 @app.route('/contacto')
-def contacto():
+def contacto():        
     return render_template('contacto.html')
+    
 
 
 
